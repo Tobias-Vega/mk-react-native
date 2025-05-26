@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function LoginScreen() {
   const [username, setUsername] = useState('');
@@ -9,7 +9,7 @@ export default function LoginScreen() {
 
   const handleLogin = () => {
     if (!username.trim() || !password.trim()) {
-      Alert.alert('Error', 'Usuario y contraseña requeridos');
+      Alert.alert('Usuario y contraseña requeridos');
       return;
     }
     router.replace('/home/history');

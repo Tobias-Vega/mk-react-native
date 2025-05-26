@@ -1,5 +1,5 @@
 import { useNavigation } from "expo-router";
-import { Button, StyleSheet, View } from "react-native";
+import { Button, View } from "react-native";
 
 export default function Index() {
 
