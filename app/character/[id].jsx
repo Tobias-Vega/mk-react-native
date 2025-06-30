@@ -49,17 +49,6 @@ export default function CharacterDetail() {
                         <Text style={styles.sectionTitle}>Descripción</Text>
                         <Text style={styles.descriptionText}>{character.fullDescription}</Text>
                     </View>
-
-                    <View style={styles.section}>
-                        <Text style={styles.sectionTitle}>Habilidades Especiales</Text>
-                        <View style={styles.abilitiesContainer}>
-                            {character.abilities.map((ability, index) => (
-                                <View key={index} style={styles.abilityChip}>
-                                    <Text style={styles.abilityText}>{ability}</Text>
-                                </View>
-                            ))}
-                        </View>
-                    </View>
                 </View>
             </View>
         </ScrollView>
