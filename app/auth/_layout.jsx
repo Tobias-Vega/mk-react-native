@@ -1,9 +1,9 @@
-import { Tabs } from "expo-router";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
-    <Tabs>
-      <Tabs.Screen name="login" options={{ title: 'Iniciar Sesión' }} />
-    </Tabs>
+    <Stack>
+      <Stack.Screen name="login" options={{ headerShown: false }} />
+    </Stack>
   );
 }

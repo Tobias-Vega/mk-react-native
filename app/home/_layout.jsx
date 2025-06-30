@@ -1,15 +1,58 @@
-import { Tabs } from 'expo-router';
-import { CharacterProvider } from '../context/Character-context';
+import { Ionicons } from '@expo/vector-icons';
+import { Tabs } from "expo-router";
 
-export default function RootLayout() {
+export default function HomeLayout() {
   return (
-    <CharacterProvider>
-      <Tabs>
-        <Tabs.Screen name="historia" options={{ title: 'Historia' }} />
-        <Tabs.Screen name="personajes" options={{ title: 'Personajes' }} />
-        <Tabs.Screen name="escenarios" options={{ title: 'Escenarios' }} />
-        <Tabs.Screen name='crear personajes' options={{ title: 'Crear personajes' }} />
-      </Tabs>
-    </CharacterProvider>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: '#FFD700',
+        tabBarInactiveTintColor: '#888',
+        tabBarStyle: {
+          backgroundColor: '#000',
+          borderTopColor: '#FFD700',
+        },
+        headerStyle: {
+          backgroundColor: '#000',
+        },
+        headerTintColor: '#FFD700',
+      }}
+    >
+      <Tabs.Screen
+        name="history"
+        options={{
+          title: 'Historia',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="book" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="characters"
+        options={{
+          title: 'Personajes',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="people" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="stages"
+        options={{
+          title: 'Escenarios',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="location" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="create-character"
+        options={{
+          title: 'Crear',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="add-circle" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }

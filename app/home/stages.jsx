@@ -12,11 +12,12 @@ const stages = [
   { name: 'Soul Chamber', image: require('../../assets/images/stages/soul.jpeg') }
 ];
 
-export default function EscenariosScreen() {
+export default function StagesScreen() {
   const { width } = useWindowDimensions();
   const CARD_MARGIN = 8 * 2;
   const numColumns = Math.floor(width / 160);
   const cardWidth = (width - CARD_MARGIN * numColumns) / numColumns;
+
   const renderItem = ({ item }) => (
     <View style={[styles.card, { width: cardWidth }]}>
       <Image source={item.image} style={styles.image} resizeMode='cover' />
@@ -33,10 +34,11 @@ export default function EscenariosScreen() {
         key={numColumns}
         data={stages}
         renderItem={renderItem}
-        keyExtractor={(_, i) => String(i)}
+        keyExtractor={(item, index) => `${item.name}-${index}`}
         numColumns={numColumns}
         contentContainerStyle={styles.list}
-        />
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 }
