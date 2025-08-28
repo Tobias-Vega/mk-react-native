@@ -13,6 +13,7 @@ export default function LoginScreen() {
       return;
     }
     router.replace('/home/history');
+
   };
 
   return (
@@ -38,6 +39,7 @@ export default function LoginScreen() {
         secureTextEntry
       />
       <Button title="Ingresar" onPress={handleLogin} color="#FFAC1C" />
+      <Button title="Ingresar con la cámara" onPress={() => router.push('/auth/camera')} color={"#FF5733"} />
     </View>
   );
 }
