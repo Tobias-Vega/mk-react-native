@@ -1,6 +1,14 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Alert, Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  Alert,
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
 export default function LoginScreen() {
   const [username, setUsername] = useState('');
@@ -13,7 +21,6 @@ export default function LoginScreen() {
       return;
     }
     router.replace('/home/history');
-
   };
 
   return (
@@ -39,7 +46,16 @@ export default function LoginScreen() {
         secureTextEntry
       />
       <Button title="Ingresar" onPress={handleLogin} color="#FFAC1C" />
-      <Button title="Ingresar con la cámara" onPress={() => router.push('/auth/camera')} color={"#FF5733"} />
+      <Button
+        title="Registrar rostro"
+        onPress={() => router.push('/auth/face-register')}
+        color={'#FFD700'}
+      />
+      <Button
+        title="Ingresar con rostro"
+        onPress={() => router.push('/auth/face-login')}
+        color={'#33C1FF'}
+      />
     </View>
   );
 }
