@@ -53,6 +53,15 @@ export default function HomeLayout() {
           ),
         }}
       />
+        <Tabs.Screen
+          name="product"
+          options={{
+            title: 'Productos',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="cube" size={size} color={color} />
+            ),
+          }}
+        />
     </Tabs>
   );
 }
